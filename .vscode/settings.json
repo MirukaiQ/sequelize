@@ -5,7 +5,7 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "for server",
+            "name": "for workers",
             "database": "peepoWork",
             "username": "postgres",
             "password": "postgres"

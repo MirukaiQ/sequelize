@@ -1,11 +1,25 @@
-const { Heroes } = require('../models');
+const { Heroes, Images } = require('../models');
 
 module.exports.createHero = async (req, res, next) => {
   try {
-    const { body } = req;
+    const {
+      body,
+      heroInstans,
+      params : {id},
+      file: {filename},
+    } = req;
 
     const newHero = await Heroes.create(body);
 
+    const heroes = Heroes.findByPk(id)
+    
+    // const newImage = await heroes.createImages({
+    //   image: filename
+    // })
+
+
+    const getImage = await heroes.getImages()
+   
     res.send(newHero);
 
   } catch (error) {
